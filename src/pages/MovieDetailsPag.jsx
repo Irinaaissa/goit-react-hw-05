@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,  } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMovieById } from "../components/api/movies-api";
 
@@ -7,7 +7,9 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  
 
+  
   useEffect(() => {
     async function getData() {
       try {
@@ -27,14 +29,15 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      <h2> aaaaaaa: {movieId}</h2>
+      <h2>  {movieId}</h2>
       {isLoading && <b>Loading payments...</b>}
       {error && <b>HTTP error!</b>}
 
-      {movie && (
+      {movieId && (
         <div>
-          <p>Poster: {movie.poster_path}</p>
-          <p>Release Date: {movie.release_date}</p>
+          <p>Title: {movieId.title}</p>
+          <p>Poster: {movieId.poster_path}</p>
+          <p>Release Date: {movieId.release_date}</p>
           
         </div>
       )}

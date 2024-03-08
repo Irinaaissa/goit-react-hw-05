@@ -30,7 +30,7 @@ return(
         <h1>Trending today</h1>
         {isLoading && <b>Loading payments...</b>}
         {error && <b>HTTP error!</b>}
-        <MovieList items={items}></MovieList>
+        <MovieList items={items}/>
     </div>
 )
 }

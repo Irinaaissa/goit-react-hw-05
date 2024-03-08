@@ -8,7 +8,7 @@ export default function MovieList({ items }) {
         <li className={css.item}
          key={item.id}>
           
-          <Link to="/movies">{item.title}</Link>
+          <Link to={`/movies/${item.id}`}>{item.title}</Link>
         </li>
       ))}
     </ul>

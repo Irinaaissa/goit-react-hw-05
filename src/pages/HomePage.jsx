@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react"
 import { getMovies } from "../components/api/movies-api";
-import MovieList from "../components/MovieList";
+import MovieList from "../components/MovieList.module.css/MovieList";
 
 export default function HomePage() {
 
 
     const [items, setItems] = useState([]);
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(false);
+    
     useEffect(()=>{
     async function getData(){
         try {
-            // setIsLoading(true);
+            setIsLoading(true);
             const data = await getMovies();
             setItems(data);
         } catch (error) {
-            console.error("Error while fetching movies", error);
-        }
+            setError(true);
+        } finally {
+            setIsLoading(false);
+          }
     }
     
     getData()
@@ -25,6 +28,8 @@ export default function HomePage() {
 return(
     <div>
         <h1>Trending today</h1>
+        {isLoading && <b>Loading payments...</b>}
+        {error && <b>HTTP error!</b>}
         <MovieList items={items}></MovieList>
     </div>
 )

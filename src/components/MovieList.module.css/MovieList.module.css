@@ -1,0 +1,14 @@
+.items {
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction:column;
+    row-gap: 12px;
+    padding-left: 20px;
+  }
+  
+  .item {
+    font-size: 16px;
+    font-weight: 600;
+  }

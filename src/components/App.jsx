@@ -9,7 +9,7 @@ import NotFoundPage from '../pages/NotFoundPage'
 import MovieDetailsPage from '../pages/MovieDetailsPag'
 
 function App() {
-  // const [count, setCount] = useState(0)
+ 
 
   return (
     <>

@@ -1,11 +1,28 @@
-.nav{
+.nav {
     display: flex;
-    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
-.link{
-    text-decoration:solid;
+
+.link {
+    text-decoration: solid;
     color: black;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    padding-left: 16px;
 }
-.isActive{
-color: red;
+
+.isActive {
+    color: red;
+}
+
+
+.link:hover {
+    color: red;
 }

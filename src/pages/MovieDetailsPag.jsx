@@ -1,46 +1,48 @@
-import { useParams,  } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getMovieById } from "../components/api/movies-api";
+import { getMovieById, getImagePatch } from "../components/api/movies-api";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState(null);
+  const [movies, setMovies] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  
+  const [urlPatch, setUrlPatch] = useState("");
 
-  
   useEffect(() => {
-    async function getData() {
+    const movieDetails = async () => {
       try {
+        const getMovieInfo = await getMovieById(movieId);
+        const imagePatch = await getImagePatch();
+        const { base_url, backdrop_sizes } = imagePatch;
+        const imageUrl = `${base_url}${backdrop_sizes}[]`;
+
+        setUrlPatch(imageUrl);
         setIsLoading(true);
-        const data = await getMovieById(movieId);
-        setMovie(data);
+        setMovies(getMovieInfo);
       } catch (error) {
         setError(true);
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
-    getData();
-    console.log(getData());
+    movieDetails();
+    console.log(movieDetails());
   }, [movieId]);
 
   return (
     <div>
-      <h2>  {movieId}</h2>
-      {isLoading && <b>Loading payments...</b>}
-      {error && <b>HTTP error!</b>}
+      <div>
+        <Link to="/">Go back</Link>
+      </div>
 
-      {movieId && (
-        <div>
-          <p>Title: {movieId.title}</p>
-          <p>Poster: {movieId.poster_path}</p>
-          <p>Release Date: {movieId.release_date}</p>
-          
-        </div>
-      )}
+      <div>
+        {isLoading && <b>Loading payments...</b>}
+        {error && <b>HTTP error!</b>}
+        <imag src={`${urlPatch}${movies.poster_patch}`} alt = "movies.title"/>
+        <h2> {movies.title}</h2>
+      </div>
     </div>
   );
 }

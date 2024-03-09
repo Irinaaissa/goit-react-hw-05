@@ -7,6 +7,7 @@ import { useSearchParams } from "react-router-dom";
 export default function MoviesPage() {
     const [params, setParams]= useSearchParams();
 const wordFilter = params.get("title") ?? "";
+
 const changeWordFilter = (nowFilter) => {
 params.set("title",nowFilter);
 setParams(params);

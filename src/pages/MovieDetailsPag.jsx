@@ -40,8 +40,12 @@ export default function MovieDetailsPage() {
       <div>
         {isLoading && <b>Loading payments...</b>}
         {error && <b>HTTP error!</b>}
-        <imag src={`${urlPatch}${movies.poster_patch}`} alt = "movies.title"/>
+        <img src={`${urlPatch}${movies.poster_path}`} alt = {movies.title}/>
         <h2> {movies.title}</h2>
+        <p> Rating <span> {movies.vote_average}</span></p>
+        <p> User Score </p> <span> {movies.vote_count}</span>
+        <p> </p>
+        
       </div>
     </div>
   );

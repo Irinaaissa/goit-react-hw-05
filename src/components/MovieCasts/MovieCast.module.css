@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    column-gap: 16px;
+    row-gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.movies{
+    
+    border-top: 2px  solid black;
+    border-bottom: 2px  solid black;;
+
+}
+
+
+
+
+
+
+
+
+
+
+

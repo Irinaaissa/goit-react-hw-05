@@ -1,0 +1,20 @@
+.movies{
+    
+    border-top: 2px  solid black;
+    border-bottom: 2px  solid black;;
+
+}
+.movieDetails{
+    display: flex;
+}
+.details{
+padding-left: 30px;
+}
+.text{
+    line-height: 1.5;
+    font-weight: 400;
+}
+.goBack{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

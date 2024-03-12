@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { getMovies } from "../components/api/movies-api";
-import MovieList from "../components/MovieList.module.css/MovieList";
+import { getMovies } from "../../components/api/movies-api";
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function HomePage() {
 
@@ -23,8 +23,9 @@ export default function HomePage() {
     }
     
     getData()
-    console.log(getData());
+    
      },[])
+     
 return(
     <div>
         <h1>Trending today</h1>

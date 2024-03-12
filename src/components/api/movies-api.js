@@ -25,5 +25,21 @@ export const getMovieById = async (movieId) => {
 
   export const getImagePatch = async () => {
     const response = await axios.get(`/configuration`,options);
-    return response.data;
-    }
+    
+    return response.data.images;
+    };
+    export const getMovieCredits = async (movieId) => {
+      const response = await axios.get(`/movie/${movieId}/credits`,options);
+      
+      return response.data.cast;
+      
+      };
+      export const getActorPatch = async () => {
+        const response = await axios.get(`/configuration`,options);
+        
+        return response.data.images;
+        };
+        export const getMovieReviews = async (movieId) => {
+          const response = await axios.get(`/movie/${movieId}/reviews`,options);
+          
+          return response.data;}

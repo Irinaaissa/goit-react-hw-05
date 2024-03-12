@@ -1,5 +1,4 @@
-// import { Link } from "react-router-dom";
-// import MovieDetailsPage from "./MovieDetailsPag";
+
 
 import { useSearchParams } from "react-router-dom";
 

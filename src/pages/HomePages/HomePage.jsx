@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getMovies } from "../../components/api/movies-api";
+import { getMovies } from "../../api/movies-api";
 import MovieList from "../../components/MovieList/MovieList";
 
 export default function HomePage() {
@@ -31,7 +31,7 @@ return(
         <h1>Trending today</h1>
         {isLoading && <b>Loading payments...</b>}
         {error && <b>HTTP error!</b>}
-        <MovieList items={items}/>
+        <MovieList movies={items}/>
     </div>
 )
 }

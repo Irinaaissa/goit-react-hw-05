@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import css from "./MovieList.module.css";
-export default function MovieList({ items }) {
+export default function MovieList({ movies }) {
+  console.log( movies);
   return (
     <ul className={css.items}>
-      {items && Array.isArray(items) && items.map((item) => (
+      { movies &&  movies.map (( movie) => (
         
         <li className={css.item}
-         key={item.id}>
+         key={ movies.id}>
           
-          <Link to={`/movies/${item.id}`}>{item.title}</Link>
+          <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
         </li>
       ))}
     </ul>

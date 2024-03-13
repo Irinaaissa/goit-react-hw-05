@@ -1,6 +1,6 @@
 import { Link, Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getMovieById, getImagePatch } from "../../components/api/movies-api";
+import { getMovieById, getImagePatch } from "../../api/movies-api";
 import css from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {

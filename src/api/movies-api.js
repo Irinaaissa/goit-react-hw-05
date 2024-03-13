@@ -43,3 +43,9 @@ export const getMovieById = async (movieId) => {
           const response = await axios.get(`/movie/${movieId}/reviews`,options);
           
           return response.data;}
+
+            
+          export const searchFilm = async (query) => {
+            const response = await axios.get(`search/movie?query=${query}`, options )
+            console.log(response.data.results);
+            return response.data.results;}

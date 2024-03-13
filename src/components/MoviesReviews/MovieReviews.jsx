@@ -6,9 +6,10 @@ import { useParams } from "react-router-dom";
 
 export default function MovieReviews(){
     const { movieId } = useParams();
-const [movies, setMovies] = useState([]);
+const [reviews, setReviews] = useState([]);
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState(false);
+const [infoDetailsFilm, setInfoDetailsFilm] = useState("");
 
 useEffect(() => {
     const filmDescription = async () => {
@@ -21,8 +22,12 @@ useEffect(() => {
       }
       try {
         const response = await getMovieReviews(movieId);
+        const [status_message] = response;
+        const detailsFilm =`${status_message}`
+        setInfoDetailsFilm(detailsFilm);
+
+        setReviews(response);
         
-        setMovies(response);
       } catch (error) {
         setError(true);
       } finally {
@@ -30,14 +35,26 @@ useEffect(() => {
       }
     };
     filmDescription();
+    
   }, [movieId]);
-
-return(
+  return (
     <>
-{isLoading && <b>Loading payments...</b>}
-{error && <b>HTTP error!</b>}
-<div> jjjjjjjjj</div>
+        {isLoading && <b>Loading payments...</b>}
+        {error && <b>HTTP error!</b>}
+        {reviews && reviews.length === 0 && (
+            <p>We don not post have any review for this movie</p>
+        )}
+        {reviews && reviews.length > 0 && (
+            <ul>
+                {reviews.map(rev => (
+                    <li key={rev.id}>
+                        <h4>{`Author: ${rev.author}`}</h4>
+                        <p>{rev.content}</p>
+                        <p> `mes:${infoDetailsFilm}`</p>
+                    </li>
+                ))}
+            </ul>
+        )}
     </>
 );
-
-}
+                }

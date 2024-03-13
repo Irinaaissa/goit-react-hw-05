@@ -80,7 +80,7 @@ export default function MovieDetailsPage() {
           </li>
           <li>
             {" "}
-            <Link to="/"> Reviews </Link>
+            <Link to="reviews"> Reviews </Link>
           </li>
         </ul>
       </div>

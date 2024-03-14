@@ -10,8 +10,9 @@
 }
 .details{
 padding-left: 30px;
+overflow: hidden;
 }
-.text{
+.textDetails{
     
     line-height: 1.5;
     font-weight: 400;

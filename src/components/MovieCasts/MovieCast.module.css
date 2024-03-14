@@ -1,6 +1,6 @@
 .list {
     display: flex;
-    column-gap: 16px;
+    column-gap: 24px;
     row-gap: 25px;
     list-style: none;
     flex-wrap: wrap;
@@ -20,7 +20,18 @@
     border: 1px solid black;
 }
 
+.details{
+    text-align: center;
+    width: 156px;
+    
+    /* word-wrap: break-word; */
+    /* overflow: hidden; */
+   
 
+    }
+    .text{
+        white-space: pre-wrap;
+    }
 
 
 

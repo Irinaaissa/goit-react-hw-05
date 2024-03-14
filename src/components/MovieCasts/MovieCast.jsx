@@ -42,7 +42,9 @@ export default function MovieCast() {
       <div>
         <ul className={css.list}>
           {movies.map((actor) => (
-            <li key={actor.id}>
+            <li 
+            className={css.text}
+            key={actor.id}>
               <img
                 className={css.img}
                 src={
@@ -52,9 +54,11 @@ export default function MovieCast() {
                 }
                 alt={`${actor.name} photo`}
               />
-              <h3>{actor.name}</h3>
-              <p>Character: </p>
-              <span>{actor.character}</span>
+              <div className={css.details}>
+                <h3>{actor.name}</h3>
+                <p>Character: </p>
+                <span className={css.details}>{actor.character}</span>
+              </div>
             </li>
           ))}
         </ul>

@@ -48,10 +48,10 @@ export default function MovieDetailsPage() {
               <h2> {movies.title}</h2>
               <h3>
                 Rating :{" "}
-                <span className={css.text}> {movies.vote_average}</span>
+                <span className={css.textDetails}> {movies.vote_average}</span>
               </h3>
               <h3> User Score: </h3>{" "}
-              <span className={css.text}> {movies.vote_count}</span>
+              <span className={css.textDetails}> {movies.vote_count}</span>
               <h3> Overview</h3>
               <span> {movies.overview}</span>
               <h3> Genres </h3>

@@ -47,5 +47,5 @@ export const getMovieById = async (movieId) => {
             
           export const searchFilm = async (query) => {
             const response = await axios.get(`search/movie?query=${query}`, options )
-            console.log(response.data.results);
+            
             return response.data.results;}

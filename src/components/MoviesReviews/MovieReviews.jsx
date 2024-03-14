@@ -7,8 +7,8 @@ export default function MovieReviews() {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  console.log(reviews);
-console.log(movieId);
+  
+
   useEffect(() => {
     const filmDescription = async () => {
       setIsLoading(true);

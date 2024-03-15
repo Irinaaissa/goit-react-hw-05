@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
-import SearchForm from "../components/SearchForm/SearchForm";
+import SearchForm from "../../components/SearchForm/SearchForm";
 import { useEffect, useState } from "react";
-import { searchFilm, getImagePatch } from "../api/movies-api";
-import MovieList from "../components/MovieList/MovieList";
+import { searchFilm, getImagePatch } from "../../api/movies-api";
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function MoviesPage() {
   const [params, setParams] = useSearchParams();
@@ -12,7 +12,7 @@ export default function MoviesPage() {
   const [error, setError] = useState(false);
   const [urlPatch, setUrlPatch] = useState("");
   // const [showBtn, setShowBtn] = useState(false);
-console.log(movies);
+
   const handleSubmit = (inputQuery) => {
     setPages(1);
     setMovies([]);

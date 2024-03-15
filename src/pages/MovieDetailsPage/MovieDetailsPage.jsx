@@ -1,7 +1,8 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams,useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMovieById, getImagePatch } from "../../api/movies-api";
 import css from "./MovieDetailsPage.module.css";
+import { useRef, Suspense } from 'react';
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -9,6 +10,10 @@ export default function MovieDetailsPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [urlPatch, setUrlPatch] = useState("");
+  const location = useLocation();
+  const backLink = useRef(
+    location.state?.from ?? location.state?.defLocation ?? '/'
+  );
 
   useEffect(() => {
     const movieDetails = async () => {
@@ -35,7 +40,7 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <div className={css.goBack}>
-        <Link to="/">Go back</Link>
+        <Link to="/" ref={backLink}>Go back </Link>
       </div>
       {isLoading && <b>Loading payments...</b>}
       {error && <b>HTTP error!</b>}
@@ -77,7 +82,9 @@ export default function MovieDetailsPage() {
           </li>
         </ul>
       </div>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
     </div>
   );
 }

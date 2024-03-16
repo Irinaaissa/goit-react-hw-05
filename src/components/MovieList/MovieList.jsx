@@ -30,7 +30,7 @@ export default function MovieList({ movies }) {
                   <Link to={{
                       pathname: `/movies/${movie.id}`,
                       state: { from: location }
-                  }}>{movie.title}</Link> 
+                  }} >{movie.title}</Link> 
               </li> 
           ))} 
       </ul> 

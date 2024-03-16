@@ -11,9 +11,7 @@ export default function MovieDetailsPage() {
   const [error, setError] = useState(false);
   const [urlPatch, setUrlPatch] = useState("");
   const location = useLocation();
-  const backLink = useRef(
-    location.state ??  '/'
-  );
+  const backLink = useRef(location);
 
   useEffect(() => {
     const movieDetails = async () => {
@@ -40,7 +38,7 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <div className={css.goBack}>
-        <Link to={backLink.current} >Go back </Link>
+        <Link to={backLink.current.state ??'/movies'} >Go back </Link>
       </div>
       {isLoading && <b>Loading payments...</b>}
       {error && <b>HTTP error!</b>}
@@ -75,10 +73,10 @@ export default function MovieDetailsPage() {
         <p> Additional information</p>
         <ul>
           <li>
-            <Link to="cast"> Cast</Link>
+            <Link to="cast" state={{from:backLink}}> Cast</Link>
           </li>
           <li>
-            <Link to="reviews"> Reviews </Link>
+            <Link to="reviews" state={{from:backLink}}> Reviews </Link>
           </li>
         </ul>
       </div>

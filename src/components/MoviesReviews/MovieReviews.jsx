@@ -32,7 +32,7 @@ export default function MovieReviews() {
       {isLoading && <b>Loading payments...</b>}
       {error && <b>HTTP error!</b>}
 
-      {reviews && (
+      {reviews.length > 0 ? (
         <ul>
           {reviews.map((rev) => (
             <li key={rev.id}>
@@ -41,7 +41,10 @@ export default function MovieReviews() {
             </li>
           ))}
         </ul>
-      )}
+      )
+      : (
+        <p>No information available at this time</p>)
+    }
     </>
   );
 }

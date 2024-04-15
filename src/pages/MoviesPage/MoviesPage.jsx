@@ -6,11 +6,12 @@ import MovieList from "../../components/MovieList/MovieList";
 
 export default function MoviesPage() {
   const [params, setParams] = useSearchParams();
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);//
   const [pages, setPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [urlPatch, setUrlPatch] = useState("");
+  
   // const [showBtn, setShowBtn] = useState(false);
 
   const handleSubmit = (inputQuery) => {

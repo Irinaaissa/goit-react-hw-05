@@ -12,7 +12,7 @@ export default function MovieDetailsPage() {
   const [urlPatch, setUrlPatch] = useState("");
   const location = useLocation();
   const backLink = useRef(location.state??'/');
-console.log(backLink);
+
   useEffect(() => {
     const movieDetails = async () => {
       setIsLoading(true);

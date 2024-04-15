@@ -31,7 +31,9 @@ return(
         <h1>Trending today</h1>
         {isLoading && <b>Loading payments...</b>}
         {error && <b>HTTP error!</b>}
-        <MovieList movies={items}/>
+        <MovieList movies={items}
+        
+        />
     </div>
 )
 }

@@ -17,9 +17,9 @@ const SearchForm = ({ request }) => {
         actions.resetForm();
       }}
     >
-      <Form>
+      <Form className={css.form}>
         <Field className={css.input} type="text" name="input" />
-        <button className={css.button} type="submit">Submit</button>
+        <button className={css.button} type="submit">Search</button>
       </Form>
     </Formik>
   );

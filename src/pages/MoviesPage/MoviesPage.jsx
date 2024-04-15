@@ -3,6 +3,8 @@ import SearchForm from "../../components/SearchForm/SearchForm";
 import { useEffect, useState } from "react";
 import { searchFilm, getImagePatch } from "../../api/movies-api";
 import MovieList from "../../components/MovieList/MovieList";
+import { CirclesWithBar } from "react-loader-spinner";
+import css from "./MoviesPage.module.css";
 
 export default function MoviesPage() {
   const [params, setParams] = useSearchParams();
@@ -48,8 +50,9 @@ export default function MoviesPage() {
 
   return (
     <div>
+     {isLoading && <b className={css.container }><CirclesWithBar color="#eb0a37"/></b>}
       <SearchForm request={handleSubmit} />
-      {isLoading && <b>Loading payments...</b>}
+      
       {error && <b>HTTP error!</b>}
       <MovieList movies={movies} urlPatch={urlPatch} />
 

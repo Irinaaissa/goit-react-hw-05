@@ -9,6 +9,20 @@
   }
   
   .item {
-    font-size: 16px;
+    display: flex;
+    font-size: 26px;
     font-weight: 600;
+    list-style-type: none;
+    gap: 20px;
+    align-items: center
+   
+  };
+  .link{
+    margin-right: 20px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }

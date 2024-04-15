@@ -1,21 +1,26 @@
 .nav {
+    margin-bottom: 40px;
+    height: 60px;
     display: flex;
     padding-top: 12px;
     padding-bottom: 12px;
     flex-wrap: wrap;
     column-gap: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 1, 2.4);
 }
 
 .link {
+    display: flex;
     text-decoration: solid;
     color: black;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 700;
     text-decoration: none;
     font-style: normal;
     padding-left: 16px;
+    align-items: center;
+    justify-items: center;
 }
 
 .isActive {

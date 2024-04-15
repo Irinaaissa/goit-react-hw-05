@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getMovieReviews } from "../../api/movies-api";
 import { useParams } from "react-router-dom";
+import { CirclesWithBar } from "react-loader-spinner";
+import css from "./MovieReviews.module.css"
 
 export default function MovieReviews() {
   const { movieId } = useParams();
@@ -29,7 +31,7 @@ export default function MovieReviews() {
   }, [movieId]);
   return (
     <>
-      {isLoading && <b>Loading payments...</b>}
+      {isLoading && <b className={css.container }><CirclesWithBar color="#eb0a37"/></b>}
       {error && <b>HTTP error!</b>}
 
       {reviews.length > 0 ? (

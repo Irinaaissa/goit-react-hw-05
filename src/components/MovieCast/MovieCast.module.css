@@ -33,7 +33,12 @@
         white-space: pre-wrap;
     }
 
-
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
 
 
 

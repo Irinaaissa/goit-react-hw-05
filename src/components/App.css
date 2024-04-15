@@ -3,5 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   /* text-align: center; */
+  background-color: var(--background-color);
 }
 
+:root{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+
+
+  --background-color: #F5DEB3;
+  --link-color:#2f1c62;
+  /* --text-color: ; */
+  --hover-color:#50504d;
+  /* --first-color:; */
+  /* --primary-color:; */
+  --secondary-color:antiquewhite;
+  /*  */
+
+}

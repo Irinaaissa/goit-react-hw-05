@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { getMovieById, getImagePatch } from "../../api/movies-api";
 import css from "./MovieDetailsPage.module.css";
 import { useRef, Suspense } from 'react';
+import { CirclesWithBar} from 'react-loader-spinner'
+
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -40,7 +42,7 @@ export default function MovieDetailsPage() {
       <div className={css.goBack}>
         <Link to={backLink.current} >Go back </Link>
       </div>
-      {isLoading && <b>Loading payments...</b>}
+      {isLoading && <b className={css.container }><CirclesWithBar color="#eb0a37"/></b>}
       {error && <b>HTTP error!</b>}
       <div >
         <div className={css.movies}></div>

@@ -2,28 +2,35 @@
     height: 28px;
     display: flex;
     gap: 12px;
-    width: 30vw;
+    
     align-items: center;
 }
 
 .input {
+    background-color: antiquewhite;
     display: block;
-    height: 100%;
-    width: 100%;
-    margin-left: 12px;
-    border: 1px solid #646cff;
+    height: 40px;
+    width: 580px;
+    border: 1px solid #6a6a63;
     border-radius: 8px;
-    padding-left: 12px;
-
     font-family: inherit;
     font-style: inherit;
     font-size: inherit;
 }
 
 .button {
-    padding: 8px 12px;
-    font-family: inherit;
-    font-style: inherit;
-    font-size: inherit;
-    margin: 0;
+    color: var(--hover-color);
+      background-color: var(--primary-color);
+      border: 2px solid #6a6a63;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      box-shadow: 0 4px 8px rgba(2, 0, 0, 2.4);
+    
+}
+.form{
+    display: flex;
+    justify-content: space-between;
 }

@@ -2,6 +2,7 @@ import { getMovieCredits, getActorPatch } from "../../api/movies-api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import css from "./MovieCast.module.css";
+import { CirclesWithBar} from 'react-loader-spinner'
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -37,7 +38,7 @@ export default function MovieCast() {
   }, [movieId]);
   return (
     <div className={css.movies}>
-      {isLoading && <b>Loading payments...</b>}
+      {isLoading && <b className={css.container }><CirclesWithBar color="#eb0a37"/></b>}
       {error && <b>HTTP error!</b>}
       <div>
         <ul className={css.list}>

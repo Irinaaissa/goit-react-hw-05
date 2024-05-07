@@ -1,8 +1,16 @@
+@media (max-width: 768px) {
+    .movieDetails{
+        flex-direction: column;
+    }
+    
+    
+    }
+  
 .movies{
     margin-top: 20px;
     margin-bottom: 20px;
     border-top: 2px  solid black;
-    border-bottom: 2px  solid black;;
+    border-bottom: 2px  solid black;
 
 }
 .movieDetails{
